@@ -1,24 +1,56 @@
-# README
+1. ============= Introduction =================== 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails, or Rails, is a server-side web application framework written in Ruby under the MIT License. Rails is a model–view–controller framework, providing default structures for a database, a web service, and web pages. 
 
-Things you may want to cover:
+official website 
+https://rubyonrails.org/
 
-* Ruby version
+learn ruby on rails
+https://www.tutorialspoint.com/ruby-on-rails/index.htm
 
-* System dependencies
+for install ruby gems like devise, bootstrap-sass etc
+https://rubygems.org/
+ 
+2. ============= MVC Architecture ===================
+Ruby on Rails uses the Model-View-Controller (MVC) architectural pattern. MVC is a pattern for the architecture of a software application.
 
-* Configuration
+View => html file
+Modal => Database
+Controller => Logic
 
-* Database creation
+Router ==============> Controller ================> View
+                            ||
+                            ||
+                        Model (database)
 
-* Database initialization
+3. ========== Route / controller and views ==================
 
-* How to run the test suite
+    rails generate controller Book
+    It creates a file called app/controllers/book_controller.rb
 
-* Services (job queues, cache servers, search engines, etc.)
+    It creates a file called app/controllers/book_controller.rb
+    class BookController < ApplicationController
+        def home 
 
-* Deployment instructions
+        end 
+    end
 
-* ...
+    for view
+    add views in app/views
+    create book folder iniside book views folder and add file home.html.erb 
+
+    now add rooute like 
+    add route in config/routes.rb
+    get 'book/home', to: 'book#home'
+
+    for root Route
+    root 'book#home'
+
+4. =================== Git Basic commands ===========================
+git init 
+git add . 
+git commit -m "your msg"
+git remote add origin repolink 
+git push -u origin master 
+
+git remote -v 
