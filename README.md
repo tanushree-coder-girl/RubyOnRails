@@ -74,6 +74,23 @@ group :production do
 end
 
 now install bundle without production 
+bundle install --without production 
+
+install heroku in ubunto 
+sudo snap install --classic heroku
+
+then check heruko version 
+heroku -v
+
+login on heroku
+heroku login 
+
+create app 
+heroku create
+heroku keys:add
+git push heroku master
+heroku rename my-app
+
 
 
 
