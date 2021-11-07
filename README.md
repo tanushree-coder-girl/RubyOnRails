@@ -54,3 +54,26 @@ git remote add origin repolink
 git push -u origin master 
 
 git remote -v 
+git status
+
+5. ================== Host On Heruku ===================
+deploy your app in production 
+firstly add 
+sqlite3 gem in development 
+
+group :development, :test do
+  gem 'sqlite3', '~> 1.4'
+end 
+
+then 
+add
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
+now install bundle without production 
+
+
+
