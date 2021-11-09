@@ -91,6 +91,10 @@ heroku keys:add
 git push heroku master
 heroku rename my-app
 
+<!-- for database -->
+git push heroku master
+heroku run rake db:migrate
+
 6. ================== Crud using scaffold and wrap  ===================
 
 rails generate scaffold Article title:string description:text
@@ -213,9 +217,22 @@ _form.html.erb
 then include in file like this 
 <%= render 'form' %>
 
+10. ==================  Styling and Mockups (Install Bootstrap Gem)  ===================
+for bootstrap saas visit 
+https://github.com/twbs/bootstrap-sass
 
-  
-    
+add gem 
+gem 'bootstrap-sass', '~> 3.4.1'
+now install 
+bundle install --without production
 
+import inside 
+app/assets/stylesheets/
+create new file for import bootstrap and add custom css
+custom.css.scss
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
+add this in assets/javascripts/application.js 
+//= require bootstrap-sprockets
