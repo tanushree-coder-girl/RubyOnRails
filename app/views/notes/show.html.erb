@@ -1,0 +1,11 @@
+<h1> Showing Selected Note </h1>
+<p>
+    Title : <%= @note.title %>
+</p>
+
+<p>
+    Description : <%= @note.description %>
+</p>
+
+<%= link_to 'Edit This  Note', edit_note_path(@note) %> | 
+<%= link_to 'Back To  Note listing', notes_path %>
