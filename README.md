@@ -59,6 +59,11 @@ git status
 <!-- for create new branch  -->
 git checkout -b implementation-user
 
+<!-- for merge branch -->
+git merge implement-user 
+
+<!-- for delete branch  -->
+git branch -d implement-user 
 
 5. ================== Host On Heruku ===================
 deploy your app in production 
@@ -283,6 +288,17 @@ add this
 class Author < ActiveRecord::Base
 
 end
+
+add Validations in Author modal file in author.rb 
+
+<!--  One To Many Association -->
+rails generate migration add_author_id_to_notes
+
+add this column in file  
+    add_column :notes, :author_id, :integer
+
+now 
+ rake db:migrate
 
 
 
