@@ -10,10 +10,16 @@
     <% @notes.each do |note| %>
     <tr>
         <td> <%= note.title %> </td>
-        <td> <%= note.description %> </td>
+        <td>
+         <%= note.description %> 
+         | Author Name: <%= note.author.username if note.author %>
+         | Created At: <%= time_ago_in_words(note.created_at) %> Ago | 
+         | Updated At: <%= time_ago_in_words(note.updated_at) %> Ago | 
+        </td>
         <td><%= link_to 'Edit Note', edit_note_path(note) %></td>
         <td><%= link_to 'Show Note', note_path(note) %></td>
         <td><%= link_to 'Delete Note', note_path(note), method: :delete, data: {confirm: "Are You sure?"} %></td>
     </tr>
     <% end %>
 </table>
+

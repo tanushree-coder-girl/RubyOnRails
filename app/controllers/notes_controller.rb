@@ -12,8 +12,10 @@ class NotesController < ApplicationController
     end
 
     def create
+        # debugger
         #render plain: params[:note].inspect
         @note = Note.new(note_params)
+        @note.author = Author.first
         #@note.save
         #redirect_to notes_path(@note)
 

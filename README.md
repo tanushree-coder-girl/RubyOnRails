@@ -300,5 +300,23 @@ add this column in file
 now 
  rake db:migrate
 
+ now add in author.rb
+     has_many :notes
+
+  now add in note.rb
+      belongs_to :author
+  
+  for debug use
+  debugger 
+  press n to run on next block of code 
+  ctrl + d to stop debugger 
+
+  for use debugger in application 
+  use this in views/layout/application.html.erb 
+      <%= debug(params) if Rails.env.development? %>
+
+
+
+
 
 
