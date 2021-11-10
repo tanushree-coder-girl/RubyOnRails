@@ -56,6 +56,10 @@ git push -u origin master
 git remote -v 
 git status
 
+<!-- for create new branch  -->
+git checkout -b implementation-user
+
+
 5. ================== Host On Heruku ===================
 deploy your app in production 
 firstly add 
@@ -167,6 +171,7 @@ note.destroy
 for reload console 
 reload!
 
+
 validations 
 field can not be blank 
     validates :title, presence: true
@@ -176,6 +181,9 @@ for check if error
 
 for error message 
   note.errors.full_messages
+
+for check is valid or not 
+  note.valid? 
 
 8. ==================  CRUD => create note using browser   ===================
 create route 
@@ -236,3 +244,45 @@ custom.css.scss
 
 add this in assets/javascripts/application.js 
 //= require bootstrap-sprockets
+
+11. ================== Associations ========================= 
+
+1 create using scaffold for testing 
+like 
+rails generate scaffold User username:string email:string 
+rake db:migrate 
+rails generate scaffold Comment description:text user:references
+
+if something went wrong then destroy scaffold by cmd like : 
+rails destroy scaffold Comment 
+
+some commands in console use 
+1) Comment.all
+2) Comment
+3) User.create(username:'xyz',email:'abc@gmail.com')
+4) user = User.first
+5) user.comments 
+6) comment = Comment.new(description:'comment is this', user:user)
+7) comment.save 
+8) comment
+9) comment.user
+
+Start Work on Migration  with browser 
+
+rails generate migration create_authors
+now add in migration file 
+  t.string :username
+  t.string :email
+
+rake db:migrate 
+
+then create model file 
+author.rb 
+add this 
+
+class Author < ActiveRecord::Base
+
+end
+
+
+
